@@ -53,7 +53,7 @@ const Scheduler = () => {
         weekends={true}
         events={events}
         eventDrop={(data: any) => updateEvent(data.event)}
-        select={(data: any) => createEvent(data)}
+        select={(data: any) => createEvent(data, calendarComponentRef.current)}
         eventResizeStop={(info: any) => updateEvent(info.event)}
         businessHours={[
           { daysOfWeek: [1, 2, 3, 4, 5], startTime: "8:00", endTime: "20:00" },

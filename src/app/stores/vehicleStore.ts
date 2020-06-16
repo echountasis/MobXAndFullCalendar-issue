@@ -31,17 +31,20 @@ export class VehicleStore {
         console.log('end:' + event.end);
     }
 
-    @action createEvent = (event: any) => {
+    @action createEvent = (event: any, calendar: any) => {
         console.log(event);
 
-        this.events.push({
+        const myEvent = {
             id: `${new Date().getTime()}`,
             title: 'test',
             start: event.start,
             end: event.end,
             allDay: event.allDay
-        })
+        };
 
+        this.events.push(myEvent);
+
+        calendar.addEvent(myEvent);
     }
 
     @action loadEvents = async (dateFrom: Date, dateTo: Date) => {
