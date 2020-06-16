@@ -28,31 +28,6 @@ const Scheduler = () => {
     interactionPlugin,
   ];
 
-  const addEvent = (event: any) => {
-    console.log(event);
-
-    runInAction(() =>
-      events.push({
-        title: "placeholder",
-        start: event.start,
-        end: event.end,
-        allDay: event.allDay,
-      })
-    );
-
-    var calendar: any = calendarComponentRef.current;
-    calendar.render();
-    // calendar?.addEvent({
-    //   id: "123",
-    //   title: "placeholder",
-    //   start: event.start,
-    //   end: event.end,
-    //   allDay: event.allDay,
-    // });
-
-    console.log(calendar);
-  };
-
   return (
     <Fragment>
       <Dimmer active={loading} inverted>

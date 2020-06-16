@@ -16,14 +16,14 @@ export class VehicleStore {
     @observable events: EventInput[] = [];
     @observable popupIsOpen: boolean = false;
 
-    @action updateEvent(event: EventInput) {
+    @action updateEvent = (event: EventInput) => {
         console.log('id:' + event.id);
         console.log('allDay:' + event.allDay);
         console.log('start:' + event.start);
         console.log('end:' + event.end);
     }
 
-    @action editEvent(event: EventInput) {
+    @action editEvent = (event: EventInput) => {
         this.popupIsOpen = true;
         console.log('id:' + event.id);
         console.log('allDay:' + event.allDay);
@@ -31,7 +31,7 @@ export class VehicleStore {
         console.log('end:' + event.end);
     }
 
-    @action createEvent(event: any) {
+    @action createEvent = (event: any) => {
         console.log(event);
 
         this.events.push({
